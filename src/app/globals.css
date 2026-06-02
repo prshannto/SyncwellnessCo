@@ -1,26 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfbf9;
+  --foreground: #3d4a3a;
+  --cream: #fdfbf9;
+  --beige-50: #faf7f4;
+  --beige-100: #f5f0eb;
+  --beige-200: #e8dfd4;
+  --beige-300: #d9cfc3;
+  --sage-50: #f4f7f2;
+  --sage-100: #e4ebe0;
+  --sage-200: #c5d4bc;
+  --sage-400: #9caf88;
+  --sage-500: #7a8f6a;
+  --sage-600: #5c6b52;
+  --sage-700: #4a5742;
+  --sage-800: #3d4a3a;
+  --sage-900: #2d362b;
+  --charcoal: #1a1e18;
+  --espresso: #252a23;
+  --mocha: #3a342e;
+  --blush-100: #f5ebe8;
+  --blush-200: #e8d5d0;
+  --blush-300: #d4b5ae;
+  --blush-800: #8b6b63;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-cream: var(--cream);
+  --color-beige-50: var(--beige-50);
+  --color-beige-100: var(--beige-100);
+  --color-beige-200: var(--beige-200);
+  --color-beige-300: var(--beige-300);
+  --color-sage-50: var(--sage-50);
+  --color-sage-100: var(--sage-100);
+  --color-sage-200: var(--sage-200);
+  --color-sage-400: var(--sage-400);
+  --color-sage-500: var(--sage-500);
+  --color-sage-600: var(--sage-600);
+  --color-sage-700: var(--sage-700);
+  --color-sage-800: var(--sage-800);
+  --color-sage-900: var(--sage-900);
+  --color-charcoal: var(--charcoal);
+  --color-espresso: var(--espresso);
+  --color-mocha: var(--mocha);
+  --color-blush-100: var(--blush-100);
+  --color-blush-200: var(--blush-200);
+  --color-blush-300: var(--blush-300);
+  --color-blush-800: var(--blush-800);
+  --font-sans: var(--font-dm-sans);
+  --font-display: var(--font-bowlby);
+  --animate-accordion-down: accordion-down 0.3s ease-out;
+  --animate-accordion-up: accordion-up 0.3s ease-out;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes accordion-down {
+  from {
+    height: 0;
   }
+  to {
+    height: var(--radix-accordion-content-height);
+  }
+}
+
+@keyframes accordion-up {
+  from {
+    height: var(--radix-accordion-content-height);
+  }
+  to {
+    height: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-dm-sans), system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-bowlby), system-ui, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+::selection {
+  background-color: var(--sage-200);
+  color: var(--charcoal);
 }

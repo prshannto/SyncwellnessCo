@@ -1,0 +1,30 @@
+export const siteConfig = {
+  name: "SyncWellnessCo",
+  tagline: "Women's Health & Hormone Coaching",
+  email: "hello@syncwellnessco.com",
+  phone: "(555) 123-4567",
+  social: {
+    instagram: "https://instagram.com/syncwellnessco",
+    facebook: "https://facebook.com/syncwellnessco",
+    youtube: "https://youtube.com/@syncwellnessco",
+    pinterest: "https://pinterest.com/syncwellnessco",
+  },
+  navLinks: [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Programs", href: "/programs" },
+    { label: "Testimonials", href: "/testimonials" },
+    { label: "Resources", href: "/resources" },
+    { label: "Contact", href: "/contact" },
+  ],
+  seoKeywords: [
+    "Women's Health Coach",
+    "Hormone Balance Coach",
+    "Gut Health Coach",
+    "Women's Wellness Coach",
+    "Hormone Health Coaching",
+    "Sustainable Fat Loss For Women",
+    "Holistic Women's Health",
+    "Hormone Friendly Nutrition",
+  ],
+};

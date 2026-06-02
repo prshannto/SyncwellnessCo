@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SyncWellnessCo
+
+Premium Women's Health Coaching website built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Shadcn-style UI components.
+
+## Tech Stack
+
+- **Next.js 16** (App Router)
+- **TypeScript**
+- **Tailwind CSS v4**
+- **Framer Motion** — scroll and hover animations
+- **Embla Carousel** — testimonial slider with autoplay, infinite loop, and swipe
+- **Radix UI** — accessible accordion and slot primitives
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Route | Status |
+|-------|--------|
+| `/` | Full homepage |
+| `/about`, `/programs`, `/testimonials`, `/resources`, `/blog`, `/consultation`, `/faq`, `/contact` | Under development placeholder |
 
-## Learn More
+## Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+src/
+├── app/              # Pages and layout
+├── components/
+│   ├── home/         # Homepage sections
+│   ├── layout/       # Navbar, Footer
+│   └── ui/           # Reusable UI primitives
+├── data/             # Mock content & site config
+└── lib/              # Utilities
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Brand & SEO**: `src/data/site.ts`
+- **Testimonials**: `src/data/testimonials.ts`
+- **Programs**: `src/data/programs.ts`
+- **FAQs**: `src/data/faqs.ts`
+- **Colors**: `src/app/globals.css`
 
-## Deploy on Vercel
+Replace Unsplash placeholder images with your coach photos and embed real testimonial videos in `VideoTestimonialsSection`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Build
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npm start
+```
