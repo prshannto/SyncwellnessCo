@@ -55,7 +55,7 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-20 sm:py-28" id="testimonials">
+    <section className="py-14 sm:py-20" id="testimonials">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Client Stories"

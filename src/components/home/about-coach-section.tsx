@@ -1,5 +1,7 @@
 "use client";
 
+
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -19,10 +21,10 @@ export function AboutCoachSection() {
           >
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-beige-200">
               <Image
-                src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=800&h=1000&fit=crop"
+                src="/neha_arora_coach.png"
                 alt="SyncWellnessCo Women's Health Coach"
                 fill
-                className="object-cover"
+                className="object-cover object-center"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>

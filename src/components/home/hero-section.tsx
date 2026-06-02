@@ -86,23 +86,23 @@ export function HeroSection() {
         </div>
       </div>
 
-      {/* Trust strip below hero */}
-      <div className="relative border-y border-beige-200 bg-charcoal">
-        <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 py-5 sm:flex-row sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-medium uppercase tracking-[0.18em] text-cream/60 sm:text-left">
+      {/* Trust strip */}
+      <div className="relative bg-charcoal">
+        <div className="mx-auto flex max-w-7xl flex-row flex-wrap items-center justify-between gap-2 px-4 py-2.5 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
+          <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-cream/60 sm:text-xs">
             Trusted by 100+ women worldwide
           </p>
-          <ul className="flex flex-wrap items-center justify-center gap-4 sm:gap-8">
+          <ul className="flex flex-wrap items-center gap-3 sm:gap-6">
             {heroTrustBadges.map((badge, i) => (
               <motion.li
                 key={badge}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.3 + i * 0.08 }}
-                className="flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-cream/90 sm:text-sm"
+                transition={{ delay: 0.2 + i * 0.06 }}
+                className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-cream/85 sm:text-xs"
               >
-                <span className="flex h-4 w-4 items-center justify-center rounded-full bg-sage-500">
-                  <Check className="h-2.5 w-2.5 text-cream" />
+                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-sage-500">
+                  <Check className="h-2 w-2 text-cream" />
                 </span>
                 {badge}
               </motion.li>
