@@ -5,7 +5,7 @@ import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { motion } from "framer-motion";
-import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { testimonials, testimonialStats } from "@/data/testimonials";
 import { cn } from "@/lib/utils";
@@ -34,6 +34,7 @@ export function TestimonialsSection() {
     [Autoplay({ delay: 6000, stopOnInteraction: true, stopOnMouseEnter: true })]
   );
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [expandedId, setExpandedId] = useState<string | null>(null);
 
   const scrollPrev = useCallback(() => emblaApi?.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi?.scrollNext(), [emblaApi]);
@@ -42,6 +43,11 @@ export function TestimonialsSection() {
     if (!emblaApi) return;
     setSelectedIndex(emblaApi.selectedScrollSnap());
   }, [emblaApi]);
+
+  const getMessage = (item: (typeof testimonials)[number]) =>
+    `${item.feedback} ${item.highlight}`;
+
+  const shouldTruncate = (message: string) => message.length > 145;
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -55,7 +61,7 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-14 sm:py-20" id="testimonials">
+    <section className="py-10 sm:py-14" id="testimonials">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Client Stories"
@@ -63,7 +69,7 @@ export function TestimonialsSection() {
           description="Hear from women who've walked this path and discovered what's possible when you work with your body — not against it."
         />
 
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="mt-6 grid gap-6 sm:grid-cols-3">
           {testimonialStats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -83,63 +89,75 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="relative mt-14">
+        <div className="relative mt-8">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex touch-pan-y">
               {testimonials.map((t) => (
                 <div
                   key={t.id}
-                  className="min-w-0 flex-[0_0_100%] px-2 sm:flex-[0_0_85%] lg:flex-[0_0_70%]"
+                  className="min-w-0 flex-[0_0_100%] px-2 sm:flex-[0_0_75%] lg:flex-[0_0_52%]"
                 >
-                  <article className="mx-auto max-w-3xl rounded-3xl border border-beige-200 bg-cream p-8 shadow-sm sm:p-10">
-                    <Quote className="h-8 w-8 text-sage-300" />
-                    <div className="mt-6 flex items-center gap-4">
-                      <div className="relative h-14 w-14 overflow-hidden rounded-full ring-2 ring-sage-200">
-                        <Image
-                          src={t.image}
-                          alt={t.name}
-                          fill
-                          className="object-cover"
-                          sizes="56px"
-                        />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-sage-900">{t.name}</p>
-                        <p className="text-sm text-sage-500">{t.location}</p>
-                        <StarRating rating={t.rating} />
-                      </div>
+                  <article className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-beige-200 bg-cream shadow-sm">
+                    <div className="relative aspect-video">
+                      <Image
+                        src={t.afterImage}
+                        alt={`${t.name} transformation`}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 40vw"
+                      />
+                      <span className="absolute left-3 top-3 rounded-full bg-charcoal/80 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-cream">
+                        {t.program}
+                      </span>
                     </div>
 
-                    <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                      <div className="rounded-xl bg-blush-100/60 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-blush-800">
-                          Before
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-sage-700">
-                          {t.before}
-                        </p>
+                    <div className="p-5 sm:p-6">
+                      <div className="flex items-center gap-4">
+                        <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-sage-200">
+                          <Image
+                            src={t.image}
+                            alt={t.name}
+                            fill
+                            className="object-cover"
+                            sizes="48px"
+                          />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-sage-900">{t.name}</p>
+                          <p className="text-xs text-sage-500">{t.location}</p>
+                          <StarRating rating={t.rating} />
+                        </div>
                       </div>
-                      <div className="rounded-xl bg-sage-100/60 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-sage-700">
-                          Process
+
+                      <div className="mt-4">
+                        <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-sage-500">
+                          Client Feedback on Programme
                         </p>
                         <p className="mt-2 text-sm leading-relaxed text-sage-700">
-                          {t.process}
+                          {(() => {
+                            const message = getMessage(t);
+                            const expanded = expandedId === t.id;
+                            if (expanded || !shouldTruncate(message)) return message;
+                            return `${message.slice(0, 145).trim()}...`;
+                          })()}
                         </p>
+                        {shouldTruncate(getMessage(t)) && (
+                          <button
+                            type="button"
+                            onClick={() =>
+                              setExpandedId((prev) => (prev === t.id ? null : t.id))
+                            }
+                            className="mt-2 text-xs font-semibold uppercase tracking-[0.12em] text-sage-700 hover:text-charcoal"
+                          >
+                            {expandedId === t.id ? "View Less" : "View More"}
+                          </button>
+                        )}
                       </div>
-                      <div className="rounded-xl bg-sage-600/10 p-4">
-                        <p className="text-xs font-semibold uppercase tracking-wider text-sage-700">
-                          Result
-                        </p>
-                        <p className="mt-2 text-sm leading-relaxed text-sage-700">
-                          {t.result}
-                        </p>
+
+                      <div className="mt-4 inline-flex rounded-full bg-sage-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sage-800">
+                        {t.duration}
                       </div>
                     </div>
-
-                    <blockquote className="mt-6 border-l-2 border-sage-400 pl-4 text-lg italic text-sage-800">
-                      &ldquo;{t.highlight}&rdquo;
-                    </blockquote>
                   </article>
                 </div>
               ))}

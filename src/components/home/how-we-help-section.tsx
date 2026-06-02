@@ -7,7 +7,7 @@ import { howWeHelp } from "@/data/home-content";
 
 export function HowWeHelpSection() {
   return (
-    <section className="bg-sage-50/50 py-20 sm:py-28">
+    <section className="bg-sage-50/50 py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="How We Help"
@@ -15,7 +15,7 @@ export function HowWeHelpSection() {
           description="Our integrated approach addresses every aspect of your wellness — from hormones to habits — with personalized guidance every step of the way."
         />
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:gap-8">
+        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:gap-8">
           {howWeHelp.map((item, index) => (
             <motion.div
               key={item.title}

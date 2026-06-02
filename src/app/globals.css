@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fdfbf9;
-  --foreground: #3d4a3a;
-  --cream: #fdfbf9;
-  --beige-50: #faf7f4;
-  --beige-100: #f5f0eb;
-  --beige-200: #e8dfd4;
-  --beige-300: #d9cfc3;
+  --background: #efe8df;
+  --foreground: #2f392d;
+  --cream: #f2ece4;
+  --beige-50: #eee5db;
+  --beige-100: #e4d9cd;
+  --beige-200: #d2c2b1;
+  --beige-300: #c4b19f;
   --sage-50: #f4f7f2;
   --sage-100: #e4ebe0;
   --sage-200: #c5d4bc;

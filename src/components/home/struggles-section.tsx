@@ -6,7 +6,7 @@ import { struggles } from "@/data/home-content";
 
 export function StrugglesSection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Sound Familiar?"

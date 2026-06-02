@@ -4,9 +4,14 @@ export type Testimonial = {
   location: string;
   rating: number;
   image: string;
+  program: string;
+  duration: string;
+  beforeImage: string;
+  afterImage: string;
   before: string;
   process: string;
   result: string;
+  feedback: string;
   highlight: string;
 };
 
@@ -17,9 +22,17 @@ export const testimonials: Testimonial[] = [
     location: "Austin, TX",
     rating: 5,
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop&crop=face",
+    program: "Hormone Harmony Framework",
+    duration: "12 Weeks",
+    beforeImage:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=800&fit=crop",
+    afterImage:
+      "https://images.unsplash.com/photo-1546961329-78bef0414d7c?w=600&h=800&fit=crop",
     before: "Chronic bloating, afternoon crashes, and stubborn belly fat despite years of dieting.",
     process: "Completed the 12-week Hormone Harmony Framework with personalized nutrition and cycle-synced movement.",
     result: "Lost 18 lbs sustainably, energy stable all day, and PMS symptoms reduced by 80%.",
+    feedback:
+      "The programme was structured, supportive, and easy to follow even with my busy schedule.",
     highlight: "I finally understand my body instead of fighting it.",
   },
   {
@@ -28,9 +41,17 @@ export const testimonials: Testimonial[] = [
     location: "Seattle, WA",
     rating: 5,
     image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop&crop=face",
+    program: "Gut Cleanse Program",
+    duration: "8 Weeks",
+    beforeImage:
+      "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&h=800&fit=crop",
+    afterImage:
+      "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&h=800&fit=crop",
     before: "Severe digestive issues, mood swings, and feeling disconnected from my health.",
     process: "Joined the Gut Cleanse Program with targeted protocols and stress-management coaching.",
     result: "Digestion normalized within 6 weeks, clearer skin, and consistent positive mood.",
+    feedback:
+      "Weekly accountability and personalized guidance made this programme a complete reset for me.",
     highlight: "This changed how I eat, think, and live every single day.",
   },
   {
@@ -39,9 +60,17 @@ export const testimonials: Testimonial[] = [
     location: "Miami, FL",
     rating: 5,
     image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&h=200&fit=crop&crop=face",
+    program: "Metabolic Fat Loss Kickstarter",
+    duration: "4 Weeks",
+    beforeImage:
+      "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&h=800&fit=crop",
+    afterImage:
+      "https://images.unsplash.com/photo-1544717305-2782549b5136?w=600&h=800&fit=crop",
     before: "Weight loss plateau, poor sleep, and overwhelming sugar cravings every evening.",
     process: "Enrolled in the 4-Week Metabolic Fat Loss Kickstarter with metabolic reset strategies.",
     result: "Dropped 12 lbs, sleep quality improved dramatically, cravings virtually eliminated.",
+    feedback:
+      "Short, focused, and incredibly effective. I saw visible changes in just one month.",
     highlight: "No extreme dieting — just science-backed strategies that actually work.",
   },
   {
@@ -50,9 +79,17 @@ export const testimonials: Testimonial[] = [
     location: "Denver, CO",
     rating: 5,
     image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&h=200&fit=crop&crop=face",
+    program: "Hormone Harmony Framework",
+    duration: "12 Weeks",
+    beforeImage:
+      "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&h=800&fit=crop",
+    afterImage:
+      "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=600&h=800&fit=crop",
     before: "Irregular cycles, hormonal acne, and constant fatigue affecting my career.",
     process: "Personalized hormone support through the Hormone Harmony Framework.",
     result: "Cycles regulated, skin cleared, and energy levels restored to pre-burnout levels.",
+    feedback:
+      "The hormone-focused programme gave me confidence and a clear plan I could trust.",
     highlight: "I feel like myself again — confident and vibrant.",
   },
   {
@@ -61,9 +98,17 @@ export const testimonials: Testimonial[] = [
     location: "Chicago, IL",
     rating: 5,
     image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=200&h=200&fit=crop&crop=face",
+    program: "Lifestyle Transformation Coaching",
+    duration: "10 Weeks",
+    beforeImage:
+      "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&h=800&fit=crop",
+    afterImage:
+      "https://images.unsplash.com/photo-1573497019940-88c28a28cf66?w=600&h=800&fit=crop",
     before: "Stress eating, brain fog, and inability to lose weight after two pregnancies.",
     process: "Holistic lifestyle transformation combining gut health and metabolic coaching.",
     result: "Lost 22 lbs, mental clarity returned, and developed a peaceful relationship with food.",
+    feedback:
+      "This programme felt personalized from day one and helped me stay consistent without stress.",
     highlight: "The most supportive coaching experience I've ever had.",
   },
 ];

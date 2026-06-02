@@ -21,7 +21,7 @@ export function FreeResourceSection() {
   };
 
   return (
-    <section className="py-20 sm:py-28" id="resources">
+    <section className="py-12 sm:py-16" id="resources">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-beige-200 bg-gradient-to-br from-sage-50 via-cream to-blush-100">
           <div className="grid lg:grid-cols-2">

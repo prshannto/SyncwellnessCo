@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Bowlby_One, DM_Sans } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/json-ld";
+import { SiteLoader } from "@/components/layout/site-loader";
 import { siteConfig } from "@/data/site";
 
 const bowlby = Bowlby_One({
@@ -58,7 +59,7 @@ export default function RootLayout({
         <JsonLd />
       </head>
       <body className="min-h-screen bg-cream font-sans text-sage-800 antialiased">
-        {children}
+        <SiteLoader>{children}</SiteLoader>
       </body>
     </html>
   );

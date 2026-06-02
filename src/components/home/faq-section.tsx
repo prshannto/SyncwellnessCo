@@ -12,7 +12,7 @@ import { faqs } from "@/data/faqs";
 
 export function FAQSection() {
   return (
-    <section className="bg-sage-50/50 py-20 sm:py-28" id="faq">
+    <section className="bg-sage-50/50 py-12 sm:py-16" id="faq">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"

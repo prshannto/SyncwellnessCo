@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 
 export function FinalCTASection() {
   return (
-    <section className="py-20 sm:py-28">
+    <section className="py-12 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -28,7 +28,7 @@ export function FinalCTASection() {
               Take the first step toward balanced hormones, a healed gut, and
               sustainable energy. Your future self will thank you.
             </p>
-            <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"

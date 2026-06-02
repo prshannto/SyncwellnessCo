@@ -13,7 +13,7 @@ export function ProgramsSection() {
   const others = programs.filter((p) => !p.featured);
 
   return (
-    <section className="py-20 sm:py-28" id="programs">
+    <section className="py-12 sm:py-16" id="programs">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Signature Programs"
@@ -21,7 +21,7 @@ export function ProgramsSection() {
           description="Choose the program that meets you where you are — each designed to deliver real, sustainable results."
         />
 
-        <div className="mt-14 grid gap-8 lg:grid-cols-3">
+        <div className="mt-8 grid gap-8 lg:grid-cols-3">
           {featured && (
             <motion.article
               initial={{ opacity: 0, y: 24 }}
