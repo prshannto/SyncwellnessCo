@@ -61,7 +61,7 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-10 sm:py-14" id="testimonials">
+    <section className="py-8 sm:py-14" id="testimonials">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Client Stories"
@@ -69,7 +69,7 @@ export function TestimonialsSection() {
           description="Hear from women who've walked this path and discovered what's possible when you work with your body — not against it."
         />
 
-        <div className="mt-6 grid gap-6 sm:grid-cols-3">
+        <div className="mt-5 grid gap-4 sm:mt-6 sm:gap-6 sm:grid-cols-3">
           {testimonialStats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -77,9 +77,9 @@ export function TestimonialsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="rounded-2xl border border-charcoal/10 bg-charcoal px-6 py-8 text-center"
+              className="rounded-2xl border border-charcoal/10 bg-charcoal px-5 py-6 text-center sm:px-6 sm:py-8"
             >
-              <p className="font-display text-3xl text-cream sm:text-4xl">
+              <p className="font-display text-2xl text-cream sm:text-4xl">
                 {stat.value}
               </p>
               <p className="mt-1 text-sm font-medium text-cream/70">
@@ -89,7 +89,7 @@ export function TestimonialsSection() {
           ))}
         </div>
 
-        <div className="relative mt-8">
+        <div className="relative mt-6 sm:mt-8">
           <div className="overflow-hidden" ref={emblaRef}>
             <div className="flex touch-pan-y">
               {testimonials.map((t) => (
@@ -111,7 +111,7 @@ export function TestimonialsSection() {
                       </span>
                     </div>
 
-                    <div className="p-5 sm:p-6">
+                    <div className="p-4 sm:p-6">
                       <div className="flex items-center gap-4">
                         <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-sage-200">
                           <Image
@@ -129,11 +129,11 @@ export function TestimonialsSection() {
                         </div>
                       </div>
 
-                      <div className="mt-4">
+                      <div className="mt-3 sm:mt-4">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-sage-500">
                           Client Feedback on Programme
                         </p>
-                        <p className="mt-2 text-sm leading-relaxed text-sage-700">
+                        <p className="mt-1.5 text-[13px] leading-relaxed text-sage-700 sm:mt-2 sm:text-sm">
                           {(() => {
                             const message = getMessage(t);
                             const expanded = expandedId === t.id;
@@ -154,7 +154,7 @@ export function TestimonialsSection() {
                         )}
                       </div>
 
-                      <div className="mt-4 inline-flex rounded-full bg-sage-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sage-800">
+                      <div className="mt-3 inline-flex rounded-full bg-sage-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sage-800 sm:mt-4">
                         {t.duration}
                       </div>
                     </div>
@@ -164,7 +164,7 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          <div className="mt-8 flex items-center justify-center gap-4">
+          <div className="mt-6 flex items-center justify-center gap-3 sm:mt-8 sm:gap-4">
             <button
               type="button"
               onClick={scrollPrev}

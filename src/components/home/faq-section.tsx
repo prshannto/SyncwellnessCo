@@ -12,7 +12,7 @@ import { faqs } from "@/data/faqs";
 
 export function FAQSection() {
   return (
-    <section className="bg-sage-50/50 py-12 sm:py-16" id="faq">
+    <section className="bg-sage-50/50 py-8 sm:py-16" id="faq">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="FAQ"
@@ -20,10 +20,10 @@ export function FAQSection() {
           description="Everything you need to know about working with SyncWellnessCo."
         />
 
-        <Accordion type="single" collapsible className="mt-12 w-full">
+        <Accordion type="single" collapsible className="mt-7 w-full sm:mt-12">
           {faqs.map((faq) => (
             <AccordionItem key={faq.id} value={faq.id}>
-              <AccordionTrigger className="text-left font-display text-lg">
+              <AccordionTrigger className="text-left font-display text-base sm:text-lg">
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent>{faq.answer}</AccordionContent>
@@ -31,7 +31,7 @@ export function FAQSection() {
           ))}
         </Accordion>
 
-        <p className="mt-8 text-center text-sm text-sage-600">
+        <p className="mt-6 text-center text-xs text-sage-600 sm:mt-8 sm:text-sm">
           Have more questions?{" "}
           <Link
             href="/faq"

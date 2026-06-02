@@ -9,7 +9,7 @@ export function HeroSection() {
   return (
     <section className="relative w-full">
       {/* 16:9 full-bleed hero video */}
-      <div className="relative aspect-video w-full min-h-[100svh] sm:min-h-0 sm:max-h-[92vh]">
+      <div className="relative aspect-[4/5] w-full sm:aspect-video sm:min-h-0 sm:max-h-[92vh]">
         {heroContent.videoUrl ? (
           <video
             src={heroContent.videoUrl}

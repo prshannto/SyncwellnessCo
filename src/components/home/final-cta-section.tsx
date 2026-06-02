@@ -7,13 +7,13 @@ import { Button } from "@/components/ui/button";
 
 export function FinalCTASection() {
   return (
-    <section className="py-12 sm:py-16">
+    <section className="py-8 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-charcoal via-espresso to-charcoal px-8 py-16 text-center sm:px-16 sm:py-20"
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-charcoal via-espresso to-charcoal px-5 py-10 text-center sm:px-16 sm:py-20"
         >
           <div className="absolute inset-0 opacity-10">
             <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-blush-200 blur-3xl" />
@@ -21,14 +21,14 @@ export function FinalCTASection() {
           </div>
 
           <div className="relative">
-            <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
+            <h2 className="font-display text-2xl font-semibold text-white sm:text-4xl lg:text-5xl">
               Your Health Transformation Starts Today
             </h2>
-            <p className="mx-auto mt-4 max-w-2xl text-lg text-sage-100">
+            <p className="mx-auto mt-2.5 max-w-2xl text-sm text-sage-100 sm:mt-4 sm:text-lg">
               Take the first step toward balanced hormones, a healed gut, and
               sustainable energy. Your future self will thank you.
             </p>
-            <div className="mt-6 flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:mt-6 sm:gap-4 sm:flex-row">
               <Button
                 asChild
                 size="lg"

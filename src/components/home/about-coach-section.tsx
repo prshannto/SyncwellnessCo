@@ -31,9 +31,9 @@ export function AboutCoachSection() {
   }, []);
 
   return (
-    <section className="bg-beige-50 py-12 sm:py-16">
+    <section className="bg-beige-50 py-8 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid items-center gap-8 lg:grid-cols-2 lg:gap-14">
+        <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -88,7 +88,7 @@ export function AboutCoachSection() {
               align="left"
             />
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-2">
+            <div className="mt-5 grid gap-3 sm:mt-6 sm:gap-4 sm:grid-cols-2">
               {coachHighlights.map((item, index) => (
                 <motion.div
                   key={item.title}
@@ -96,12 +96,12 @@ export function AboutCoachSection() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="rounded-xl border border-beige-200 bg-cream p-5"
+                  className="rounded-xl border border-beige-200 bg-cream p-4 sm:p-5"
                 >
-                  <h3 className="font-display text-lg font-semibold text-sage-900">
+                  <h3 className="font-display text-base font-semibold text-sage-900 sm:text-lg">
                     {item.title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-sage-600">
+                  <p className="mt-1.5 text-xs leading-relaxed text-sage-600 sm:mt-2 sm:text-sm">
                     {item.description}
                   </p>
                 </motion.div>

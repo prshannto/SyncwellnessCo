@@ -12,7 +12,7 @@ export function VideoTestimonialsSection() {
   const active = videoTestimonials.find((v) => v.id === activeVideo);
 
   return (
-    <section className="bg-beige-50 py-8 sm:py-12">
+    <section className="bg-beige-50 py-7 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Video Stories"
@@ -20,7 +20,7 @@ export function VideoTestimonialsSection() {
           description="Hear directly from our clients about their journey — in their own words."
         />
 
-        <div className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-6 grid gap-5 sm:mt-8 sm:gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {videoTestimonials.map((video, index) => (
             <motion.article
               key={video.id}
@@ -58,11 +58,11 @@ export function VideoTestimonialsSection() {
                   {video.duration}
                 </span>
               </div>
-              <div className="p-5">
-                <h3 className="font-display text-lg font-semibold text-sage-900">
+              <div className="p-4 sm:p-5">
+                <h3 className="font-display text-base font-semibold text-sage-900 sm:text-lg">
                   {video.title}
                 </h3>
-                <p className="mt-1 text-sm text-sage-600">{video.name}</p>
+                <p className="mt-1 text-xs text-sage-600 sm:text-sm">{video.name}</p>
               </div>
             </motion.article>
           ))}

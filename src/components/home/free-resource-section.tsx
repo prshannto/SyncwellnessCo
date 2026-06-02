@@ -21,11 +21,11 @@ export function FreeResourceSection() {
   };
 
   return (
-    <section className="py-12 sm:py-16" id="resources">
+    <section className="py-8 sm:py-16" id="resources">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden rounded-3xl border border-beige-200 bg-gradient-to-br from-sage-50 via-cream to-blush-100">
           <div className="grid lg:grid-cols-2">
-            <div className="p-8 sm:p-12 lg:p-14">
+            <div className="p-5 sm:p-12 lg:p-14">
               <SectionHeading
                 eyebrow="Free Resource"
                 title="Free Hormone Balance eBook"
@@ -37,21 +37,21 @@ export function FreeResourceSection() {
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
-                  className="mt-8 flex items-start gap-3 rounded-xl bg-sage-100 p-5"
+                  className="mt-6 flex items-start gap-3 rounded-xl bg-sage-100 p-4 sm:mt-8 sm:p-5"
                 >
                   <CheckCircle2 className="mt-0.5 h-6 w-6 shrink-0 text-sage-600" />
                   <div>
                     <p className="font-semibold text-sage-900">
                       Check your inbox!
                     </p>
-                    <p className="mt-1 text-sm text-sage-600">
+                    <p className="mt-1 text-xs text-sage-600 sm:text-sm">
                       Your free eBook download link is on its way. Don&apos;t
                       forget to check spam.
                     </p>
                   </div>
                 </motion.div>
               ) : (
-                <form onSubmit={handleSubmit} className="mt-8 space-y-4">
+                <form onSubmit={handleSubmit} className="mt-6 space-y-3 sm:mt-8 sm:space-y-4">
                   <div className="space-y-2">
                     <Label htmlFor="name">Name</Label>
                     <Input
@@ -93,26 +93,26 @@ export function FreeResourceSection() {
               )}
             </div>
 
-            <div className="relative flex items-center justify-center bg-sage-600/10 p-8 sm:p-12">
+            <div className="relative flex items-center justify-center bg-sage-600/10 p-5 sm:p-12">
               <motion.div
                 initial={{ opacity: 0, rotate: -2 }}
                 whileInView={{ opacity: 1, rotate: 0 }}
                 viewport={{ once: true }}
                 className="relative w-full max-w-xs"
               >
-                <div className="aspect-[3/4] rounded-2xl border border-beige-200 bg-cream p-8 shadow-2xl">
+                <div className="aspect-[3/4] rounded-2xl border border-beige-200 bg-cream p-6 shadow-2xl sm:p-8">
                   <BookOpen className="h-12 w-12 text-sage-600" />
-                  <h3 className="mt-6 font-display text-2xl font-semibold text-sage-900">
+                  <h3 className="mt-4 font-display text-xl font-semibold text-sage-900 sm:mt-6 sm:text-2xl">
                     The Hormone Balance Guide
                   </h3>
-                  <ul className="mt-6 space-y-3 text-sm text-sage-600">
+                  <ul className="mt-4 space-y-2 text-xs text-sage-600 sm:mt-6 sm:space-y-3 sm:text-sm">
                     <li>• Cycle-synced nutrition basics</li>
                     <li>• Gut-hormone connection</li>
                     <li>• Stress & sleep optimization</li>
                     <li>• Supplement starter guide</li>
                     <li>• 7-day meal plan template</li>
                   </ul>
-                  <p className="mt-8 text-xs font-medium uppercase tracking-wider text-sage-500">
+                  <p className="mt-6 text-[10px] font-medium uppercase tracking-wider text-sage-500 sm:mt-8 sm:text-xs">
                     42 pages · Instant download
                   </p>
                 </div>
