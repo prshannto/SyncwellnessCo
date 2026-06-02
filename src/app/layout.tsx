@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Bowlby_One, DM_Sans } from "next/font/google";
+import { Cormorant_Garamond, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SiteLoader } from "@/components/layout/site-loader";
 import { siteConfig } from "@/data/site";
 
-const bowlby = Bowlby_One({
-  variable: "--font-bowlby",
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
+const openSans = Open_Sans({
+  variable: "--font-open-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -54,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${bowlby.variable} ${dmSans.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${openSans.variable}`}>
       <head>
         <JsonLd />
       </head>

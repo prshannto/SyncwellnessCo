@@ -31,7 +31,7 @@ export function SectionHeading({
       )}
     >
       {eyebrow && (
-        <span className="mb-3 inline-block text-xs font-semibold uppercase tracking-[0.2em] text-sage-500">
+        <span className="mb-2 inline-block text-[11px] font-semibold uppercase tracking-[0.18em] text-sage-500">
           {eyebrow}
         </span>
       )}
@@ -39,7 +39,7 @@ export function SectionHeading({
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-sage-600 sm:text-lg">
+        <p className="mt-3 text-[15px] leading-relaxed text-sage-600 sm:text-base">
           {description}
         </p>
       )}

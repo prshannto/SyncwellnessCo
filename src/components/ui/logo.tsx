@@ -23,9 +23,7 @@ export function Logo({ className, variant = "default" }: LogoProps) {
           isLight ? "text-cream" : "text-charcoal"
         )}
       >
-        <span className="uppercase">Sync</span>
-        <span className="lowercase">wellness</span>
-        <span className="uppercase">Co</span>
+        SyncwellnessCo
       </span>
     </Link>
   );

@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Check } from "lucide-react";
@@ -9,16 +8,24 @@ import { heroContent, heroTrustBadges } from "@/data/home-content";
 export function HeroSection() {
   return (
     <section className="relative w-full">
-      {/* 16:9 full-bleed hero image */}
+      {/* 16:9 full-bleed hero video */}
       <div className="relative aspect-video w-full min-h-[100svh] sm:min-h-0 sm:max-h-[92vh]">
-        <Image
-          src={heroContent.image}
-          alt={heroContent.imageAlt}
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+        {heroContent.videoUrl ? (
+          <video
+            src={heroContent.videoUrl}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+        ) : (
+          <div
+            className="absolute inset-0 h-full w-full bg-cover bg-center"
+            style={{ backgroundImage: `url('${heroContent.image}')` }}
+          />
+        )}
 
         {/* Dark cinematic overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-charcoal/55 via-charcoal/25 to-charcoal/85" />
@@ -42,25 +49,25 @@ export function HeroSection() {
 
         {/* Desktop: marketing line + Get Started */}
         <div className="absolute inset-0 hidden flex-col justify-end lg:flex">
-          <div className="mx-auto w-full max-w-7xl px-8 pb-14 xl:px-12 xl:pb-16">
+          <div className="mx-auto w-full max-w-7xl px-8 pb-10 xl:px-12 xl:pb-12">
             <motion.div
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="max-w-3xl"
+              className="max-w-2xl"
             >
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.25em] text-cream/70">
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.22em] text-cream/70">
                 Women&apos;s Health Coaching
               </p>
-              <h1 className="font-display text-4xl leading-[1.08] text-cream xl:text-5xl 2xl:text-[3.5rem]">
+              <h1 className="font-display text-[2.5rem] leading-[1.02] text-cream xl:text-[3.1rem] 2xl:text-[3.35rem]">
                 {heroContent.marketingLine}
               </h1>
-              <p className="mt-3 text-xl italic text-cream/85 sm:text-2xl xl:text-3xl">
+              <p className="mt-2 text-lg italic text-cream/85 sm:text-xl xl:text-2xl">
                 {heroContent.marketingSubline}
               </p>
               <Link
                 href="/consultation"
-                className="group mt-8 inline-flex items-center gap-2 rounded-full bg-cream px-7 py-3.5 text-sm font-semibold uppercase tracking-[0.12em] text-charcoal transition-all hover:bg-beige-100 hover:shadow-lg"
+                className="group mt-6 inline-flex items-center gap-2 rounded-full bg-cream px-6 py-3 text-sm font-semibold uppercase tracking-[0.11em] text-charcoal transition-all hover:bg-beige-100 hover:shadow-lg"
               >
                 Get Started
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -70,16 +77,16 @@ export function HeroSection() {
         </div>
 
         {/* Mobile: compact tagline at bottom */}
-        <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-8 pt-24 lg:hidden">
+        <div className="absolute inset-x-0 bottom-0 z-10 px-4 pb-6 pt-20 lg:hidden">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.15 }}
           >
-            <h1 className="font-display text-2xl leading-tight text-cream sm:text-3xl">
+            <h1 className="font-display text-[1.7rem] leading-tight text-cream sm:text-[2rem]">
               {heroContent.marketingLine}
             </h1>
-            <p className="mt-2 text-sm leading-relaxed text-cream/80">
+            <p className="mt-1.5 text-sm leading-relaxed text-cream/80">
               {heroContent.marketingSubline}
             </p>
           </motion.div>
