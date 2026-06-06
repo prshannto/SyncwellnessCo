@@ -24,6 +24,10 @@
   --blush-200: #e8d5d0;
   --blush-300: #d4b5ae;
   --blush-800: #8b6b63;
+  --gold: #b38c50;
+  --gold-light: #d4b896;
+  --gold-muted: #f5ede3;
+  --slate: #56656d;
 }
 
 @theme inline {
@@ -50,6 +54,10 @@
   --color-blush-200: var(--blush-200);
   --color-blush-300: var(--blush-300);
   --color-blush-800: var(--blush-800);
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-muted: var(--gold-muted);
+  --color-slate: var(--slate);
   --font-sans: var(--font-open-sans);
   --font-display: var(--font-cormorant);
   --animate-accordion-down: accordion-down 0.3s ease-out;
@@ -74,6 +82,24 @@
   }
 }
 
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -92,4 +118,22 @@ body {
 ::selection {
   background-color: var(--sage-200);
   color: var(--charcoal);
+}
+
+.marquee-scroll-left {
+  animation: marquee-left 28s linear infinite;
+}
+
+.marquee-scroll-right {
+  animation: marquee-right 34s linear infinite;
+}
+
+.marquee-scroll-left-slow {
+  animation: marquee-left 38s linear infinite;
+}
+
+.marquee-track:hover .marquee-scroll-left,
+.marquee-track:hover .marquee-scroll-right,
+.marquee-track:hover .marquee-scroll-left-slow {
+  animation-play-state: paused;
 }

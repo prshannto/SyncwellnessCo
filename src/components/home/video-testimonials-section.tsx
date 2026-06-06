@@ -12,7 +12,7 @@ export function VideoTestimonialsSection() {
   const active = videoTestimonials.find((v) => v.id === activeVideo);
 
   return (
-    <section className="bg-beige-50 py-7 sm:py-12">
+    <section className="bg-sage-100/40 py-7 sm:py-12">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Video Stories"

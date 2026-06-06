@@ -43,7 +43,7 @@ export function HeroSection() {
             href="/consultation"
             className="flex-1 rounded-full bg-cream py-2.5 text-center text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal transition-colors hover:bg-cream/90"
           >
-            Start Now
+            Join
           </Link>
         </div>
 
@@ -95,21 +95,21 @@ export function HeroSection() {
 
       {/* Trust strip */}
       <div className="relative bg-charcoal">
-        <div className="mx-auto flex max-w-7xl flex-row flex-wrap items-center justify-between gap-2 px-4 py-2.5 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
-          <p className="text-[10px] font-medium uppercase tracking-[0.18em] text-cream/60 sm:text-xs">
+        <div className="mx-auto max-w-7xl px-4 py-5 sm:flex sm:items-center sm:justify-between sm:gap-5 sm:px-6 sm:py-4 lg:px-8">
+          <p className="whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.16em] text-[#B38C50] sm:text-xs">
             Trusted by 100+ women worldwide
           </p>
-          <ul className="flex flex-wrap items-center gap-3 sm:gap-6">
+          <ul className="mt-3 flex flex-wrap items-center gap-x-5 gap-y-3 sm:mt-0 sm:flex-nowrap sm:gap-5 lg:gap-6">
             {heroTrustBadges.map((badge, i) => (
               <motion.li
                 key={badge}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.2 + i * 0.06 }}
-                className="flex items-center gap-1.5 text-[10px] font-medium uppercase tracking-[0.15em] text-cream/85 sm:text-xs"
+                className="flex shrink-0 items-center gap-1.5 whitespace-nowrap text-[10px] font-semibold uppercase tracking-[0.16em] text-cream sm:text-xs"
               >
-                <span className="flex h-3.5 w-3.5 items-center justify-center rounded-full bg-sage-500">
-                  <Check className="h-2 w-2 text-cream" />
+                <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-sage-400 sm:h-4 sm:w-4">
+                  <Check className="h-2 w-2 text-cream sm:h-2.5 sm:w-2.5" />
                 </span>
                 {badge}
               </motion.li>

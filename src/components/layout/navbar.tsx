@@ -40,84 +40,98 @@ export function Navbar() {
           : "border-b border-beige-200/80 bg-cream/95 shadow-sm backdrop-blur-md"
       )}
     >
-      <nav className="relative mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
-        <button
-          type="button"
-          className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden",
-            heroNav
-              ? "border-cream/50 text-cream hover:bg-cream/10"
-              : "border-charcoal/20 text-charcoal hover:bg-charcoal/5"
-          )}
-          aria-label="Profile placeholder"
-        >
-          <User className="h-5 w-5" />
-        </button>
-
-        <Logo
-          variant={heroNav ? "light" : "default"}
-          className="absolute left-1/2 -translate-x-1/2 lg:hidden"
-        />
-
-        <Logo
-          variant={heroNav ? "light" : "default"}
-          className="hidden lg:flex"
-        />
-
-        <ul className="hidden items-center gap-6 xl:gap-8 lg:flex lg:ml-auto">
-          {siteConfig.navLinks.map((link) => (
-            <li key={link.href}>
-              <Link
-                href={link.href}
-                className={cn(
-                  "text-[11px] font-medium uppercase tracking-[0.14em] transition-colors",
-                  heroNav
-                    ? "text-cream/90 hover:text-cream"
-                    : "text-sage-700 hover:text-charcoal"
-                )}
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-
-        <div className="hidden items-center gap-2 sm:gap-3 lg:flex">
-          <Link
-            href="/consultation"
+      <nav className="mx-auto grid max-w-7xl grid-cols-[1fr_auto_1fr] items-center gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        {/* Left: brand */}
+        <div className="flex items-center gap-3">
+          <button
+            type="button"
             className={cn(
-              "rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
+              "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors lg:hidden",
               heroNav
-                ? "border-cream/60 text-cream hover:bg-cream/10"
-                : "border-charcoal/30 text-charcoal hover:bg-charcoal/5"
+                ? "border-cream/50 text-cream hover:bg-cream/10"
+                : "border-charcoal/20 text-charcoal hover:bg-charcoal/5"
             )}
+            aria-label="Profile placeholder"
           >
-            Member
-          </Link>
-          <Link
-            href="/consultation"
-            className={cn(
-              "rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
-              heroNav
-                ? "bg-cream text-charcoal hover:bg-cream/90"
-                : "bg-charcoal text-cream hover:bg-espresso"
-            )}
-          >
-            Start Now
-          </Link>
+            <User className="h-5 w-5" />
+          </button>
+
+          <Logo
+            variant={heroNav ? "light" : "default"}
+            className="hidden lg:flex"
+          />
         </div>
 
-        <button
-          type="button"
-          className={cn(
-            "inline-flex items-center justify-center rounded-lg p-2 lg:hidden",
-            heroNav ? "text-cream" : "text-charcoal"
-          )}
-          onClick={() => setMobileOpen(!mobileOpen)}
-          aria-label={mobileOpen ? "Close menu" : "Open menu"}
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        {/* Center: nav tabs (desktop) / logo (mobile) */}
+        <div className="flex justify-center">
+          <Logo
+            variant={heroNav ? "light" : "default"}
+            className="lg:hidden"
+          />
+
+          <ul className="hidden items-center gap-5 xl:gap-7 lg:flex">
+            {siteConfig.navLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      "text-[11px] font-semibold uppercase tracking-[0.14em] transition-colors",
+                      heroNav
+                        ? "text-cream/90 hover:text-cream"
+                        : isActive
+                          ? "text-charcoal"
+                          : "text-sage-700 hover:text-charcoal"
+                    )}
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+
+        {/* Right: CTAs + mobile menu */}
+        <div className="flex items-center justify-end gap-2 sm:gap-3">
+          <div className="hidden items-center gap-2 sm:gap-3 lg:flex">
+            <Link
+              href="/consultation"
+              className={cn(
+                "rounded-full border px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
+                heroNav
+                  ? "border-cream/60 text-cream hover:bg-cream/10"
+                  : "border-charcoal/30 text-charcoal hover:bg-charcoal/5"
+              )}
+            >
+              Member
+            </Link>
+            <Link
+              href="/consultation"
+              className={cn(
+                "rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.12em] transition-all",
+                heroNav
+                  ? "bg-cream text-charcoal hover:bg-cream/90"
+                  : "bg-gold text-cream hover:bg-gold/90"
+              )}
+            >
+              Join
+            </Link>
+          </div>
+
+          <button
+            type="button"
+            className={cn(
+              "inline-flex items-center justify-center rounded-lg p-2 lg:hidden",
+              heroNav ? "text-cream" : "text-charcoal"
+            )}
+            onClick={() => setMobileOpen(!mobileOpen)}
+            aria-label={mobileOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </nav>
 
       <AnimatePresence>
@@ -162,14 +176,14 @@ export function Navbar() {
                       <Link
                         href="/consultation"
                         onClick={() => setMobileOpen(false)}
-                        className="block w-full rounded-md border border-[#cdb9a3] bg-[#ebe8e4] py-3 text-center text-sm font-semibold uppercase tracking-[0.14em] text-[#b49777] transition-colors hover:bg-[#e2ddd7]"
+                        className="block w-full rounded-md border border-charcoal/20 bg-beige-100 py-3 text-center text-sm font-semibold uppercase tracking-[0.14em] text-charcoal transition-colors hover:bg-beige-200"
                       >
-                        Start For Free
+                        Join
                       </Link>
                       <Link
                         href="/consultation"
                         onClick={() => setMobileOpen(false)}
-                        className="block w-full rounded-md bg-[#b49777] py-3 text-center text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:bg-[#a98b6f]"
+                        className="block w-full rounded-md bg-gold py-3 text-center text-sm font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:bg-gold/90"
                       >
                         Member Login
                       </Link>

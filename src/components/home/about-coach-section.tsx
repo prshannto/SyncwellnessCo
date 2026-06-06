@@ -8,6 +8,8 @@ import { coachHighlights } from "@/data/home-content";
 
 export function AboutCoachSection() {
   const coachImageSrc = "/neha_arora_coach.png";
+  const coachBackgroundSrc =
+    "https://res.cloudinary.com/daw1tscqr/image/upload/v1780733233/shadow-background_wbrsm4.jpg";
 
   useEffect(() => {
     // #region agent log
@@ -31,8 +33,12 @@ export function AboutCoachSection() {
   }, []);
 
   return (
-    <section className="bg-beige-50 py-8 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section
+      className="relative overflow-hidden bg-beige-100/40 bg-cover bg-center py-8 sm:py-16"
+      style={{ backgroundImage: `url(${coachBackgroundSrc})` }}
+    >
+      <div className="absolute inset-0 bg-cream/30" />
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid items-center gap-6 sm:gap-8 lg:grid-cols-2 lg:gap-14">
           <motion.div
             initial={{ opacity: 0, x: -24 }}

@@ -7,6 +7,7 @@ import { ProgramsSection } from "@/components/home/programs-section";
 import { AboutCoachSection } from "@/components/home/about-coach-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { VideoTestimonialsSection } from "@/components/home/video-testimonials-section";
+import { BlogSection } from "@/components/home/blog-section";
 import { FreeResourceSection } from "@/components/home/free-resource-section";
 import { FAQSection } from "@/components/home/faq-section";
 import { FinalCTASection } from "@/components/home/final-cta-section";
@@ -23,9 +24,10 @@ export default function HomePage() {
         <AboutCoachSection />
         <TestimonialsSection />
         <VideoTestimonialsSection />
+        <BlogSection />
         <FreeResourceSection />
-        <FAQSection />
         <FinalCTASection />
+        <FAQSection />
       </main>
       <Footer />
     </>

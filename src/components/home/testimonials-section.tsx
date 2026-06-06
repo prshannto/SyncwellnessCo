@@ -51,7 +51,6 @@ export function TestimonialsSection() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
     return () => {
@@ -61,7 +60,7 @@ export function TestimonialsSection() {
   }, [emblaApi, onSelect]);
 
   return (
-    <section className="py-8 sm:py-14" id="testimonials">
+    <section className="bg-background py-8 sm:py-14" id="testimonials">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Client Stories"
@@ -69,25 +68,28 @@ export function TestimonialsSection() {
           description="Hear from women who've walked this path and discovered what's possible when you work with your body — not against it."
         />
 
-        <div className="mt-5 grid gap-4 sm:mt-6 sm:gap-6 sm:grid-cols-3">
-          {testimonialStats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 16 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="rounded-2xl border border-charcoal/10 bg-charcoal px-5 py-6 text-center sm:px-6 sm:py-8"
-            >
-              <p className="font-display text-2xl text-cream sm:text-4xl">
-                {stat.value}
-              </p>
-              <p className="mt-1 text-sm font-medium text-cream/70">
-                {stat.label}
-              </p>
-            </motion.div>
-          ))}
-        </div>
+<div className="mt-8 grid grid-cols-3 gap-3 sm:gap-6">
+  {[
+    { value: "100+", label: "Women Helped" },
+    { value: "95%", label: "Happy Clients" },
+    { value: "5★", label: "Average Rating" },
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="relative overflow-hidden bg-beige-100/70 px-4 py-8 text-center"
+    >
+      <div className="relative">
+        <h3 className="font-display text-3xl text-charcoal sm:text-5xl">
+          {item.value}
+        </h3>
+
+        <p className="mt-2 text-xs font-semibold uppercase tracking-[0.15em] text-sage-700 sm:text-sm">
+          {item.label}
+        </p>
+      </div>
+    </div>
+  ))}
+</div>
 
         <div className="relative mt-6 sm:mt-8">
           <div className="overflow-hidden" ref={emblaRef}>
@@ -95,10 +97,10 @@ export function TestimonialsSection() {
               {testimonials.map((t) => (
                 <div
                   key={t.id}
-                  className="min-w-0 flex-[0_0_100%] px-2 sm:flex-[0_0_75%] lg:flex-[0_0_52%]"
+                  className="min-w-0 flex-[0_0_90%] px-2 sm:flex-[0_0_65%] lg:flex-[0_0_42%]"
                 >
-                  <article className="mx-auto max-w-xl overflow-hidden rounded-2xl border border-beige-200 bg-cream shadow-sm">
-                    <div className="relative aspect-video">
+                  <article className="mx-auto max-w-md overflow-hidden rounded-2xl border border-beige-200 bg-cream shadow-sm">
+                    <div className="relative aspect-[16/10]">
                       <Image
                         src={t.afterImage}
                         alt={`${t.name} transformation`}
@@ -111,9 +113,9 @@ export function TestimonialsSection() {
                       </span>
                     </div>
 
-                    <div className="p-4 sm:p-6">
-                      <div className="flex items-center gap-4">
-                        <div className="relative h-12 w-12 overflow-hidden rounded-full ring-2 ring-sage-200">
+                    <div className="p-3 sm:p-4">
+                      <div className="flex items-center gap-3">
+                        <div className="relative h-10 w-10 overflow-hidden rounded-full ring-2 ring-sage-200">
                           <Image
                             src={t.image}
                             alt={t.name}
@@ -129,7 +131,7 @@ export function TestimonialsSection() {
                         </div>
                       </div>
 
-                      <div className="mt-3 sm:mt-4">
+                      <div className="mt-2.5 sm:mt-3">
                         <p className="text-[10px] font-semibold uppercase tracking-[0.15em] text-sage-500">
                           Client Feedback on Programme
                         </p>
@@ -154,7 +156,7 @@ export function TestimonialsSection() {
                         )}
                       </div>
 
-                      <div className="mt-3 inline-flex rounded-full bg-sage-100 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-sage-800 sm:mt-4">
+                      <div className="mt-2.5 inline-flex rounded-full bg-sage-100 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-sage-800 sm:mt-3">
                         {t.duration}
                       </div>
                     </div>

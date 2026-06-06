@@ -2,52 +2,83 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ArrowRight, HeartPulse, UsersRound } from "lucide-react";
 
 export function FinalCTASection() {
+  const ctaVideoSrc =
+    "https://res.cloudinary.com/daw1tscqr/video/upload/v1780735738/certified-functional-hormone-specialist_e844gt.mp4";
+
   return (
-    <section className="py-8 sm:py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section className="relative overflow-hidden bg-charcoal py-10 sm:py-16">
+      <video
+        className="absolute inset-0 h-full w-full object-cover"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src={ctaVideoSrc} type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 bg-charcoal/58 shadow-[inset_0_0_140px_rgba(0,0,0,0.7)]" />
+
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-charcoal via-espresso to-charcoal px-5 py-10 text-center sm:px-16 sm:py-20"
+          className="mx-auto max-w-5xl overflow-hidden shadow-2xl shadow-charcoal/35"
         >
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute -top-24 -right-24 h-64 w-64 rounded-full bg-blush-200 blur-3xl" />
-            <div className="absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-sage-300 blur-3xl" />
+          <div className="grid md:grid-cols-2">
+            <div className="bg-cream px-5 py-9 text-center sm:px-8 sm:py-12">
+              <UsersRound className="mx-auto h-12 w-12 text-charcoal sm:h-14 sm:w-14" />
+              <h3 className="mt-4 text-xl font-bold text-charcoal sm:text-2xl">
+                Personalized Support
+              </h3>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-slate sm:text-base">
+                You receive a plan built around your hormones, gut health,
+                lifestyle, and real schedule.
+              </p>
+            </div>
+
+            <div className="bg-slate px-5 py-9 text-center sm:px-8 sm:py-12">
+              <HeartPulse className="mx-auto h-12 w-12 text-cream/85 sm:h-14 sm:w-14" />
+              <h3 className="mt-4 text-xl font-bold text-cream sm:text-2xl">
+                Sustainable Transformation
+              </h3>
+              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-cream/88 sm:text-base">
+                Balance your hormones, support digestion, and rebuild energy
+                without extremes.
+              </p>
+            </div>
           </div>
 
-          <div className="relative">
-            <h2 className="font-display text-2xl font-semibold text-white sm:text-4xl lg:text-5xl">
+          <div className="bg-gold px-5 py-9 text-left sm:px-10 sm:py-12 lg:px-16">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-cream/85 sm:text-xs">
+              Ready to Start Your Transformation?
+            </p>
+            <h2 className="mt-3 max-w-4xl font-display text-2xl font-semibold leading-tight text-cream sm:text-4xl lg:text-[2.75rem]">
               Your Health Transformation Starts Today
             </h2>
-            <p className="mx-auto mt-2.5 max-w-2xl text-sm text-sage-100 sm:mt-4 sm:text-lg">
-              Take the first step toward balanced hormones, a healed gut, and
-              sustainable energy. Your future self will thank you.
+            <p className="mt-4 max-w-3xl text-sm leading-relaxed text-cream sm:text-base">
+              Balanced hormones, a healed gut, and sustainable energy are
+              possible with the right guidance and a plan that fits your life.
             </p>
-            <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:mt-6 sm:gap-4 sm:flex-row">
-              <Button
-                asChild
-                size="lg"
-                variant="secondary"
-                className="bg-cream text-sage-800 hover:bg-beige-100"
+            <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 bg-cream px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-charcoal transition-colors hover:bg-cream/90"
               >
-                <Link href="/consultation">
-                  Book Free Call
-                  <ArrowRight className="h-4 w-4" />
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="outline"
-                className="border-white/40 text-white hover:bg-white/10 hover:text-white"
+                Book Free Call
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/consultation"
+                className="inline-flex items-center justify-center gap-2 border border-cream/55 px-7 py-3.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-cream transition-colors hover:bg-cream/10"
               >
-                <Link href="/consultation">Apply For Coaching</Link>
-              </Button>
+                Apply For Coaching
+              </Link>
             </div>
           </div>
         </motion.div>
