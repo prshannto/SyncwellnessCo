@@ -56,22 +56,25 @@ export function AboutCoachSection() {
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 onError={() => {
                   // #region agent log
-                  fetch("http://127.0.0.1:7549/ingest/3b4cb57e-473b-43c7-96be-d8535731c4c3", {
-                    method: "POST",
-                    headers: {
-                      "Content-Type": "application/json",
-                      "X-Debug-Session-Id": "9adf1d",
+                  fetch(
+                    "http://127.0.0.1:7549/ingest/3b4cb57e-473b-43c7-96be-d8535731c4c3",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                        "X-Debug-Session-Id": "9adf1d",
+                      },
+                      body: JSON.stringify({
+                        sessionId: "9adf1d",
+                        runId: "post-fix",
+                        hypothesisId: "H1",
+                        location: "about-coach-section.tsx:47",
+                        message: "Coach image failed to load",
+                        data: { coachImageSrc },
+                        timestamp: Date.now(),
+                      }),
                     },
-                    body: JSON.stringify({
-                      sessionId: "9adf1d",
-                      runId: "post-fix",
-                      hypothesisId: "H1",
-                      location: "about-coach-section.tsx:47",
-                      message: "Coach image failed to load",
-                      data: { coachImageSrc },
-                      timestamp: Date.now(),
-                    }),
-                  }).catch(() => {});
+                  ).catch(() => {});
                   // #endregion
                 }}
               />

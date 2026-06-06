@@ -13,7 +13,11 @@ export function ProgramsSection() {
   const others = programs.filter((p) => !p.featured);
 
   return (
-    <section className="py-8 sm:py-16" id="programs" style={{ backgroundColor: "#E8DDD9" }}>
+    <section
+      className="py-8 sm:py-16"
+      id="programs"
+      style={{ backgroundColor: "#E8DDD9" }}
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Signature Programs"
@@ -71,13 +75,18 @@ export function ProgramsSection() {
               <h3 className="font-display text-xl font-semibold sm:text-3xl text-charcoal">
                 {program.name}
               </h3>
-              <p className="mt-1 text-sage-600 font-medium">{program.duration}</p>
+              <p className="mt-1 text-sage-600 font-medium">
+                {program.duration}
+              </p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-sage-700 sm:mt-4 sm:text-base">
                 {program.description}
               </p>
               <ul className="mt-4 space-y-1.5 sm:mt-6 sm:space-y-2">
                 {program.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm text-sage-700">
+                  <li
+                    key={f}
+                    className="flex items-start gap-2 text-sm text-sage-700"
+                  >
                     <Check className="mt-0.5 h-4 w-4 shrink-0 text-sage-600" />
                     {f}
                   </li>
