@@ -30,6 +30,8 @@ export function AboutCoachSection() {
     // #endregion
   }, []);
 
+  // noting changed something here
+
   return (
     <section className="bg-beige-50 py-8 sm:py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
